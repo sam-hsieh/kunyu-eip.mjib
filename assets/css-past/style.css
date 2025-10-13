@@ -1,0 +1,354 @@
+/* EIP 企業資訊入口網站 - 主要樣式 */
+
+:root {
+    --primary-blue: #155DFC;
+    --dark-blue: #2E5C8F;
+    --light-gray: #F8F9FA;
+    --border-color: #E0E0E0;
+}
+
+/* 品牌標題區域 */
+.brand-header {
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.brand-header .navbar-brand {
+    font-weight: bold;
+    color: white !important;
+    font-size: 1.25rem;
+}
+
+/* 主導航區域 */
+.navbar-main {
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+/* 導航欄樣式 */
+.navbar-brand {
+    font-weight: bold;
+    color: white !important;
+}
+
+.navbar-toggler {
+    border: none;
+    padding: 0.25rem 0.5rem;
+}
+
+.navbar-toggler:focus {
+    box-shadow: none;
+}
+
+.navbar-toggler-icon {
+    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba%28255, 255, 255, 0.85%29' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
+    width: 1.2em;
+    height: 1.2em;
+}
+
+/* 自訂 navbar toggler */
+.navbar-toggler {
+    border-color: rgba(255, 255, 255, 0.3);
+}
+
+.navbar-toggler:hover {
+    border-color: rgba(255, 255, 255, 0.5);
+}
+
+/* 響應式設計 */
+@media (max-width: 991.98px) {
+    .brand-header .navbar-toggler {
+        display: block !important;
+    }
+    
+    /* 小螢幕下主導航的基本狀態 */
+    .navbar-main {
+        position: relative;
+        z-index: 1000;
+        box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        /* 移除 display: none，讓 Bootstrap 的 collapse 機制正常運作 */
+    }
+    
+    /* 讓 collapse 機制控制顯示/隱藏 */
+    .navbar-collapse {
+        display: none;
+    }
+    
+    .navbar-collapse.show {
+        display: block !important;
+    }
+}
+
+@media (min-width: 992px) {
+    .brand-header .navbar-toggler {
+        display: none !important;
+    }
+    
+    .navbar-main {
+        display: block !important;
+    }
+    
+    .navbar-collapse {
+        display: block !important;
+    }
+}
+
+/* 主導航樣式 */
+.navbar-nav .nav-link {
+    transition: all 0.3s ease;
+    border-radius: 4px;
+    margin: 0 2px;
+}
+
+.navbar-nav .nav-link:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+.navbar-nav .nav-link.active {
+    background-color: rgba(255, 255, 255, 0.2);
+    font-weight: 500;
+}
+
+/* 通知徽章 */
+.notification-badge {
+    font-size: 0.6rem;
+    top: 0;
+    right: 0;
+    transform: translate(50%, -50%) !important;
+}
+
+/* 側邊欄樣式 */
+.sidebar {
+    background-color: var(--light-gray);
+    border-right: 1px solid var(--border-color);
+    min-height: calc(100vh - 112px); /* 調整高度以適應雙層導航 */
+    position: relative;
+    z-index: 1000;
+}
+
+.sidebar.collapse:not(.show) {
+    display: none;
+}
+
+@media (min-width: 768px) {
+    .sidebar.collapse {
+        display: block !important;
+    }
+}
+
+/* 行動裝置側邊欄覆蓋 */
+@media (max-width: 767.98px) {
+    .sidebar {
+        position: fixed;
+        top: 112px; /* 調整以適應雙層導航 */
+        left: 0;
+        width: 280px;
+        height: calc(100vh - 112px); /* 調整高度以適應雙層導航 */
+        transform: translateX(-100%);
+        transition: transform 0.3s ease-in-out;
+        box-shadow: 2px 0 5px rgba(0,0,0,0.1);
+        z-index: 1050;
+    }
+    
+    .sidebar.show {
+        transform: translateX(0);
+    }
+    
+    .main-content {
+        margin-left: 0 !important;
+    }
+    
+    /* 側邊欄背景遮罩 */
+    .sidebar-backdrop {
+        position: fixed;
+        top: 112px; /* 調整以適應雙層導航 */
+        left: 0;
+        width: 100vw;
+        height: calc(100vh - 112px); /* 調整高度以適應雙層導航 */
+        background-color: rgba(0, 0, 0, 0.5);
+        z-index: 1040;
+        opacity: 0;
+        visibility: hidden;
+        transition: opacity 0.3s ease-in-out;
+    }
+    
+    .sidebar-backdrop.show {
+        opacity: 1;
+        visibility: visible;
+    }
+}
+
+.sidebar .nav-link {
+    color: #495057;
+    padding: 0.75rem 1rem;
+    border-radius: 0;
+    margin-bottom: 2px;
+}
+
+.sidebar .nav-link:hover {
+    background-color: #e9ecef;
+    color: var(--primary-blue);
+}
+
+.sidebar .nav-link.active {
+    background-color: var(--primary-blue);
+    color: white;
+}
+
+/* 主要內容區域 */
+.main-content {
+    background-color: #f8f9fa;
+    min-height: calc(100vh - 112px); /* 調整以適應雙層導航 */
+}
+
+/* 麵包屑導航 */
+.breadcrumb {
+    background-color: transparent;
+    padding: 0;
+}
+
+/* 統計卡片樣式 */
+.stat-card {
+    background: white;
+    border-radius: 8px;
+    border: 1px solid var(--border-color);
+    transition: all 0.3s ease;
+}
+
+.stat-card:hover {
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+.stat-number {
+    font-size: 2.5rem;
+    font-weight: bold;
+    margin-bottom: 0.5rem;
+}
+
+.stat-label {
+    color: #6c757d;
+    font-size: 0.9rem;
+}
+
+/* 章節標題 */
+.section-title {
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: #495057;
+    margin-bottom: 1rem;
+}
+
+/* 文件項目樣式 */
+.document-item {
+    background: white;
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    padding: 1rem;
+    margin-bottom: 0.75rem;
+    transition: all 0.3s ease;
+}
+
+.document-item:hover {
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.document-title {
+    font-weight: 500;
+    color: #495057;
+    margin-bottom: 0.25rem;
+}
+
+.document-date {
+    color: #6c757d;
+    font-size: 0.85rem;
+}
+
+/* 狀態標籤 */
+.status-badge {
+    font-size: 0.75rem;
+    padding: 0.25rem 0.5rem;
+}
+
+/* 新聞項目樣式 */
+.news-item {
+    padding: 0.75rem 0;
+    border-bottom: 1px solid #e9ecef;
+}
+
+.news-item:last-child {
+    border-bottom: none;
+}
+
+.news-title {
+    color: #495057;
+    text-decoration: none;
+    font-size: 0.9rem;
+}
+
+.news-title:hover {
+    color: var(--primary-blue);
+}
+
+.news-date {
+    color: #6c757d;
+    font-size: 0.8rem;
+}
+
+/* 快速連結樣式 */
+.quick-links {
+    background: white;
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    padding: 1.5rem;
+}
+
+.quick-link-item {
+    text-align: center;
+    padding: 1rem;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+    text-decoration: none;
+    color: #495057;
+}
+
+.quick-link-item:hover {
+    background-color: var(--light-gray);
+    color: var(--primary-blue);
+}
+
+/* 頁腳樣式 */
+.footer {
+    background-color: white;
+    border-top: 1px solid var(--border-color);
+    padding: 1rem 0;
+    text-align: center;
+    color: #6c757d;
+    font-size: 0.85rem;
+}
+
+/* 響應式設計 */
+@media (max-width: 768px) {
+    .sidebar {
+        min-height: auto;
+    }
+    
+    .stat-number {
+        font-size: 2rem;
+    }
+    
+    .document-item {
+        padding: 0.75rem;
+    }
+    
+    .quick-link-item {
+        padding: 0.75rem;
+    }
+}
+
+@media (max-width: 576px) {
+    .stat-number {
+        font-size: 1.5rem;
+    }
+    
+    .section-title {
+        font-size: 1rem;
+    }
+}

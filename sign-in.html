@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en" data-bs-theme="auto">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Signin Template · Bootstrap v5.3</title>
+    <link href="./assets/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        html,
+        body {
+            height: 100%;
+        }
+
+        .form-signin {
+            max-width: 330px;
+            padding: 1rem;
+        }
+
+        .form-signin .form-floating:focus-within {
+            z-index: 2;
+        }
+
+        .form-signin input[type="email"] {
+            margin-bottom: -1px;
+            border-bottom-right-radius: 0;
+            border-bottom-left-radius: 0;
+        }
+
+        .form-signin input[type="password"] {
+            margin-bottom: 10px;
+            border-top-left-radius: 0;
+            border-top-right-radius: 0;
+        }
+
+        .bd-placeholder-img {
+            font-size: 1.125rem;
+            text-anchor: middle;
+            -webkit-user-select: none;
+            -moz-user-select: none;
+            user-select: none
+        }
+
+        .btn-primary {
+            background-color: #68ABE3;
+            border-color: #68ABE3;
+        }
+
+        @media (min-width: 768px) {
+            .bd-placeholder-img-lg {
+                font-size: 3.5rem
+            }
+        }
+    </style>
+</head>
+
+<body class="d-flex justify-content-center align-items-center py-4 bg-body-tertiary">
+    <div class="row justify-content-center align-items-center">
+        <div class="col-11 col-lg-6">
+            <main class="form-signin w-100 m-auto">
+                <form>
+                    <img class="mb-4 d-block mx-auto" src="./assets/img/ROC_Ministry_of_Justice_Emblem.svg.png" alt=""
+                        width="72" height="57">
+                    <h1 class="h3 mb-3 text-center">登入系統</h1>
+                    <div class="form-floating"> <input type="email" class="form-control" id="floatingInput"
+                            placeholder="請輸入用戶帳號"> <label for="floatingInput">用戶帳號</label> </div>
+                    <div class="form-floating"> <input type="password" class="form-control" id="floatingPassword"
+                            placeholder="請輸入用戶密碼"> <label for="floatingPassword">用戶密碼</label> </div>
+                    <div class="form-check my-3"> <input class="form-check-input" type="checkbox" value="remember-me"
+                            id="checkDefault"> <label class="form-check-label" for="checkDefault">
+                            記住我的用戶身分
+                        </label> </div>
+
+                    <button class="btn btn-primary w-100 py-2">登入</button>
+
+                </form>
+
+                <div class="row justify-content-center mt-4">
+                    <div class="col text-center"><a href="#">忘記密碼?</a></div>
+                    <div class="col text-center"><a href="#">使用說明</a></div>
+                    <div class="col text-center"><a href="#">回首頁</a></div>
+                </div>
+
+
+            </main>
+        </div>
+        <div class="col-11 col-lg-auto">
+            <ul>
+                <li class="border-bottom my-3"> 單一窗口於10月4日正式上線，屆時個人網頁請從單一窗口登入使用</li>
+                <li class="border-bottom my-3">諮詢專線：局本部分機2942、2943、2944、2947</li>
+            </ul>
+        </div>
+    </div>
+
+
+</body>
+
+</html>

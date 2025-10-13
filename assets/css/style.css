@@ -1,0 +1,343 @@
+:root {
+    --Primary-Strong: #3C90D7;
+    --Primary: #68ABE3;
+    --Primary-900: #001F65;
+    --Secondary-200: #C6E6F1;
+    --Secondary-600: #2685A3;
+    --Secondary-900: #1E4B5C;
+    --Secondary-Strong: #4FAFC9;
+    --Secondary: #7AC8DE;
+    --Third-Strong: #586AC5;
+    --Third: #7B8CD7;
+    --border-light: #E5E7EB;
+    --dark-blue: #364153;
+    --header-height: 80px;
+    --userInfo-height: 50px;
+    --z-toggleTopNav: 999;
+    --z-header: 997;
+    --z-TopNav: 998;
+    --z-slidebar: 996;
+    --z-mask: 995;
+}
+
+a {
+    text-decoration: none;
+}
+
+header {
+    background-color: var(--Primary);
+    display: flex;
+    height: var(--header-height);
+    padding: 0 16px;
+    justify-content: space-between;
+    align-items: center;
+    align-self: stretch;
+    color: #fff;
+    position: relative;
+    z-index: var(--z-header);
+
+}
+
+header .userInfo {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: clamp(0.8rem, 1rem, 3vw);
+}
+
+header .siteName {
+    color: white;
+    font-size: 20px;
+    font-weight: 600;
+}
+
+header .userInfo .userName {
+    display: flex;
+    width: 3rem;
+    font-size: 1.5rem;
+    aspect-ratio: 1/1;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    font-weight: 600;
+    border-radius: 50%;
+    background: var(--Primary-Strong, #3C90D7);
+}
+
+#toggleTopNav {
+    display: none;
+}
+
+
+#toggleTopNav::after {
+    content: "\F5D4";
+    font-family: bootstrap-icons !important;
+    font-size: 1.8rem;
+    line-height: 1;
+    color: white;
+}
+
+#TopNav {
+    position: relative;
+    background-color: var(--Secondary);
+    display: flex;
+    justify-content: center;
+    z-index: var(--z-TopNav);
+}
+
+#TopNav .siteMainMenu {
+    display: flex;
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+}
+
+#TopNav .siteMainMenu li.active {
+    pointer-events: none;
+}
+
+#TopNav .siteMainMenu>li {
+    background-color: var(--Secondary);
+    color: #fff;
+    border-bottom: 3px solid var(--Secondary);
+    position: relative;
+}
+
+#TopNav .siteMainMenu>li>a {
+    display: block;
+    padding: 1rem;
+    min-width: 7rem;
+    text-align: center;
+}
+
+#TopNav .siteMainMenu>li .siteMain-dropdown-menu {
+    display: none;
+}
+
+#TopNav .siteMainMenu>li .siteMain-dropdown-menu {
+    display: block;
+    list-style: none;
+    margin: 0;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    padding: 0;
+    background-color: var(--Secondary-600);
+    color: #fff;
+    min-width: max-content;
+}
+
+#TopNav .siteMainMenu>li .siteMain-dropdown-menu li {
+    padding: 1rem;
+    white-space: nowrap;
+}
+
+#TopNav .siteMainMenu>li .siteMain-dropdown-menu li+li {
+    border-top: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+#TopNav .siteMainMenu>li .siteMain-dropdown-menu a {
+    color: inherit;
+}
+
+#TopNav .siteMainMenu li.active {
+    background-color: var(--Secondary-600);
+    border-bottom: 3px solid var(--Primary-900);
+}
+
+#TopNav .siteMainMenu>li>a {
+    color: inherit;
+}
+
+/* 桌機：hover 展開（無動畫） */
+@media (hover:hover) and (pointer:fine) {
+    #TopNav .siteMainMenu>li>ul.siteMain-dropdown-menu {
+        display: none;
+    }
+
+    #TopNav .siteMainMenu>li:hover>ul.siteMain-dropdown-menu {
+        display: block;
+    }
+
+    /* 展開箭頭（可選） */
+    #TopNav .siteMainMenu>li:has(> ul.siteMain-dropdown-menu)>a::after {
+        content: "\F282";
+        font-family: bootstrap-icons !important;
+        font-size: .8em;
+    }
+
+    #TopNav .siteMainMenu>li:hover>a::after {
+        transform: rotate(180deg);
+    }
+}
+
+/* 手機：click 展開/關閉（無動畫、無預設高度） */
+@media (hover:none) and (pointer:coarse) {
+
+    /* 直式下拉布局（若你有 1024px 的 RWD 也可並存） */
+   
+
+    #TopNav .siteMainMenu>li>ul.siteMain-dropdown-menu {
+        position: static;
+        width: 100%;
+        border-radius: 0;
+        display: none;
+        /* 核心：未開啟時不佔高度 */
+    }
+
+    #TopNav .siteMainMenu>li[data-open="true"]>ul.siteMain-dropdown-menu {
+        display: block;
+    }
+
+    /* 箭頭狀態（可選） */
+    #TopNav .siteMainMenu>li:has(> ul.siteMain-dropdown-menu)>a::after {
+        content: "\F282";
+        font-family: bootstrap-icons !important;
+        font-size: .8em;
+    }
+
+    #TopNav .siteMainMenu>li[data-open="true"]>a::after {
+        transform: rotate(180deg);
+    }
+}
+
+
+
+
+
+@media (min-width: 1025px) {
+    #TopNav .siteMainMenu>li:hover {
+        color: var(--Primary-900);
+        border-bottom: 3px solid var(--Primary-900);
+    }
+}
+
+main {
+    display: flex;
+    transition: grid-template-columns 0.3s ease;
+}
+
+
+
+#toggleSlidebar {
+    display: none;
+    cursor: pointer;
+    color: #FFF;
+    font-size: 1.5rem;
+    line-height: 1;
+}
+
+#toggleSlidebar::after {
+    font-family: bootstrap-icons !important;
+    content: '\F479';
+}
+
+#toggleSlidebar.close-slidebar::after {
+    content: '\F113';
+}
+
+.content-area {
+    flex: 1;
+    width: 100%;
+}
+.content-area table th{
+   background-color: rgb(248, 249, 250);
+}
+main:has(#slidebar.close-slidebar) #mask {
+    position: fixed;
+    inset: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: var(--z-mask);
+
+}
+.page-title{
+    font-size: clamp(1.5rem, 2vw + 1rem, 2.3rem);
+    font-weight: 900;
+    color:var(--Secondary-900) ;
+     padding: 2rem 0;
+}
+.page-title::after {
+    content: "";
+    display: block;
+    width: 3.5rem;
+    height: 4px;
+    background-color: var(--Primary-Strong);
+    margin-top: 0.5rem;
+    border-radius: 2px;
+   
+}
+@media (max-width: 1024px) {
+    header {
+        position: sticky;
+        top: 0;
+    }
+
+    #toggleTopNav {
+        display: flex;
+        z-index: var(--z-toggleTopNav);
+    }
+
+    #toggleTopNav.open::after {
+        content: "\F62A";
+
+    }
+
+    #TopNav {
+        display: none;
+    }
+
+    #TopNav.open {
+        display: flex;
+        position: fixed;
+        top: var(--header-height);
+        left: 0;
+        right: 0;
+        bottom: 0;
+    }
+
+    #TopNav.open .siteMainMenu {
+        flex-direction: column;
+        width: 100%;
+    }
+
+    #TopNav.open .siteMainMenu li {
+        width: 100%;
+        border-bottom: 1px solid var(--Secondary-Strong);
+    }
+
+    #TopNav .siteMainMenu>li>a {
+
+        text-align: left;
+    }
+
+    #TopNav .siteMainMenu>li .siteMain-dropdown-menu {
+        width: 100%;
+        position: static;
+    }
+
+    header .userInfo {
+        position: fixed;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        padding: 0.5rem 0;
+        background-color: var(--Primary);
+        justify-content: center;
+        height: var(--userInfo-height);
+
+    }
+
+    header .userInfo .userName {
+        width: 2rem;
+        height: 2rem;
+        font-size: 0.8rem;
+    }
+
+    #toggleSlidebar {
+        display: block;
+    }
+
+    main {
+        padding-bottom: var(--userInfo-height);
+    }
+}
