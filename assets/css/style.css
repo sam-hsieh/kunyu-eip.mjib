@@ -19,7 +19,10 @@
     --z-slidebar: 996;
     --z-mask: 995;
 }
-
+.btn--Primary{
+background-color: var(--Primary);
+border-color: var(--Primary);
+}
 a {
     text-decoration: none;
 }
