@@ -28,7 +28,7 @@ a {
 }
 
 header {
-    background-color: var(--Primary);
+    background-image: linear-gradient(45deg, var(--Primary-900), var(--Primary));
     display: flex;
     height: var(--header-height);
     padding: 0 16px;
@@ -64,7 +64,7 @@ header .userInfo .userName {
     color: white;
     font-weight: 600;
     border-radius: 50%;
-    background: var(--Primary-Strong, #3C90D7);
+    background: var(--Primary-900, #3C90D7);
 }
 
 #toggleTopNav {
@@ -171,6 +171,9 @@ header .userInfo .userName {
 
     #TopNav .siteMainMenu>li:hover>a::after {
         transform: rotate(180deg);
+    }
+    #TopNav .siteMainMenu>li .siteMain-dropdown-menu li:hover{
+        background-color: var(--Primary-900);
     }
 }
 

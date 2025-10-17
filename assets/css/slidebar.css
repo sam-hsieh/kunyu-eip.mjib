@@ -18,6 +18,8 @@
   flex-direction: column;
   font-size: 17px;
   z-index: var(--z-slidebar);
+ background-image: linear-gradient(to bottom, var(--Primary), var(--Primary-900));
+  box-shadow: 0 5px 15px 2px rgba(0,0,0,0.1);
 }
 
 main.close-slidebar  #slidebar{
@@ -58,7 +60,7 @@ main.close-slidebar  #slidebar{
 #slidebar #sidebarMenu li {
   padding-top: var(--sidebarMenu-py);
   padding-bottom: var(--sidebarMenu-py);
-  color: var(--dark-blue);
+  color: #fff;
   font-weight: 600;
 
 }
@@ -78,20 +80,19 @@ main.close-slidebar  #slidebar{
   content: "\F285";
   display: block;
   font-family: bootstrap-icons !important;
-  color: var(--border-light);
+  color: #fff;
   text-indent: 0.2rem;
   font-size: 14px;
 }
 
 #slidebar #sidebarMenu>li.submenu-active>a::after {
   content: "\F282";
-  color: var(--dark-blue);
+  color: #fff;
   ;
 }
 
 #slidebar #sidebarMenu li>a {
-  color: var(--dark-blue);
-  ;
+  color: #fff;
 }
 
 #slidebar #sidebarMenu ul.submenu {
@@ -116,7 +117,6 @@ main.close-slidebar  #slidebar{
 #slidebar #sidebarMenu ul.submenu li>a {
   display: flex;
   align-items: center;
-  color: inherit;
 }
 
 #slidebar #sidebarMenu ul.submenu li>a::before {
@@ -135,7 +135,7 @@ main.close-slidebar  #slidebar{
 }
 
 #slidebar #sidebarMenu a:hover {
-  color: #000;
+  color:var(--Secondary-200);
 }
 
 @media (max-width: 1024px) {
