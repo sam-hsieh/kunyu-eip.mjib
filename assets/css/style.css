@@ -19,7 +19,7 @@
     --z-slidebar: 996;
     --z-mask: 995;
 }
-.btn--Primary{
+.btn-primary{
 background-color: var(--Primary);
 border-color: var(--Primary);
 }

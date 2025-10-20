@@ -4,3 +4,6 @@
 線上報名管理：online-reg.html  
 代理報名／簽到作業：agent-signin.html  
 新增課程：insert-course.html  
+人員管理：org-user-manage.html  
+人員管理-資料異動：org-user-edit.html  
+

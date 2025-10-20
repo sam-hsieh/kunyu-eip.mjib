@@ -12,21 +12,48 @@
   width: var(--slidebar-width);
   background-color: #fff;
   min-height: calc(100vh - var(--header-height) - 60px);
-  height: 100%;
+  /* height: 100%; */
   display: flex;
   border-right: 1px solid var(--border-light);
   flex-direction: column;
   font-size: 17px;
   z-index: var(--z-slidebar);
- background-image: linear-gradient(to bottom, var(--Primary), var(--Primary-900));
-  box-shadow: 0 5px 15px 2px rgba(0,0,0,0.1);
+  background-image: linear-gradient(to bottom, var(--Primary), var(--Primary-900));
+  box-shadow: 0 5px 15px 2px rgba(0, 0, 0, 0.1);
+  overflow: auto;
 }
 
-main.close-slidebar  #slidebar{
+#slidebar::-webkit-scrollbar {
+  width: 5px;
+  /* 垂直滾動條的寬度 */
+}
+
+/* 滾動條的軌道（背景） */
+#slidebar::-webkit-scrollbar-track {
+  background: #f4f4f4;
+  border-radius: 6px;
+  /* 軌道圓角 */
+}
+
+/* 滾動條的滑塊 */
+#slidebar::-webkit-scrollbar-thumb {
+  background: #888;
+  border-radius: 6px;
+  /* 滑塊圓角 */
+}
+
+/* 滑鼠懸停時的滑塊樣式 */
+#slidebar::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}
+
+
+
+main.close-slidebar #slidebar {
   width: 100%;
   left: 0;
-   transition: width 0.3s ease;
-   
+  transition: width 0.3s ease;
+
 }
 
 
@@ -135,7 +162,7 @@ main.close-slidebar  #slidebar{
 }
 
 #slidebar #sidebarMenu a:hover {
-  color:var(--Secondary-200);
+  color: var(--Secondary-200);
 }
 
 @media (max-width: 1024px) {
@@ -146,7 +173,7 @@ main.close-slidebar  #slidebar{
     overflow: auto;
     padding-bottom: 10vh;
   }
- 
+
   #slidebar.showup {
     left: 0;
     z-index: 99;
