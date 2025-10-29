@@ -1,0 +1,4 @@
+.modal-header {
+    background-image: linear-gradient(90deg, var(--Secondary-600), var(--Primary));
+    color: #fff;
+}

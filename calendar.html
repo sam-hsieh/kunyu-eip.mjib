@@ -1,23 +1,476 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 
 <head>
-	<title>Calendar 01</title>
-	<meta charset="utf-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-	<link rel="stylesheet" href="assets/css/bootstrap.min.css">
-	<link rel="stylesheet" href="assets//css/calendar.css">
-
-</head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>法務部.調查局-網路行事曆</title>
+    <link rel="stylesheet" href="assets/css/bootstrap.min.css">
+    <link rel="stylesheet" href="assets/css/bootstrap-grid.min.css">
+    <link rel="stylesheet" href="assets/font-icons/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="assets/css/style.css">
+     <link rel="stylesheet" href="assets/css/reset-bs.css">
+    <link rel="stylesheet" href="assets/css/slidebar.css">
+            <link rel="stylesheet" href="assets//css/calendar.css">
+    </head>
 
 <body>
-	<div class="container">
-		<div class="calendar"></div>
-	</div>
+    <div id="app">
+        <header>
 
-	<script src="assets/js/jquery.min.js"></script>
-	<script src="assets/js/calendar.js"></script>
+            <div id="toggleSlidebar">
+            </div>
+            <div class="siteName d-flex align-items-center">
+                <img class="d-block me-2" src="./assets/img/login-logo.png" alt="" width="60">
+                法務部.調查局-個人首頁
+            </div>
+            <div class="userInfo">
+                <div class="userName">
+                    蘇
+                </div>
+                <div class="userLoginTime">
+                    114年10月3日星期五下午12:41
+                </div>
+                <div class="logout">
+                    <a href="#" class="btn btn-outline-light btn-sm">登出</a>
+                </div>
+            </div>
+            <div id="toggleTopNav">
 
+            </div>
+        </header>
+        <div id="TopNav">
+            <ul class="siteMainMenu">
+                <li class="active"><a href="#">個人首頁</a></li>
+                <li><a href="#">行事曆</a></li>
+                <li><a href="#">電子郵件</a></li>
+                <li><a href="#">雲口袋</a></li>
+                <li><a href="#">通訊錄</a>
+
+                </li>
+                <li><a href="#">公文管理</a>
+                </li>
+                <li><a href="#" tabindex="0">學習課程 </a>
+                    <ul class="siteMain-dropdown-menu">
+                        <li><a class="my-2" href="#">課程線上報名</a></li>
+                        <li><a class="my-2" href="#">本局線上報名上課列表</a></li>
+                        <li><a class="my-2" href="#">人事行政總處學習時數</a></li>
+
+                    </ul>
+                </li>
+            </ul>
+        </div>
+        <main>
+            <aside id=slidebar>
+                 
+                    
+                    <ul id="sidebarMenu">
+                                                    <li class="submenu-toggle">
+                                <a href="javascript:;">電子公文區</a>
+                                <ul class="submenu" style="display: none;">
+                                                                            <li><a href="javascript:;">局文公布</a></li>
+                                                                            <li><a href="javascript:;">局文維護</a></li>
+                                                                            <li><a href="javascript:;">單位文公布</a></li>
+                                                                            <li><a href="javascript:;">單位文維護</a></li>
+                                                                            <li><a href="javascript:;">全局公布欄</a></li>
+                                                                            <li><a href="javascript:;">單位公布欄</a></li>
+                                                                            <li><a href="javascript:;">總發附件上傳</a></li>
+                                                                            <li><a href="javascript:;">單位附件上傳</a></li>
+                                                                            <li><a href="javascript:;">附件上傳說明</a></li>
+                                                                    </ul>
+                            </li>
+                                                    <li class="submenu-toggle">
+                                <a href="javascript:;">網路磁碟</a>
+                                <ul class="submenu" style="display: none;">
+                                                                            <li><a href="javascript:;">網路硬碟</a></li>
+                                                                            <li><a href="javascript:;">上傳需知</a></li>
+                                                                    </ul>
+                            </li>
+                                                    <li class="submenu-toggle">
+                                <a href="javascript:;">行事曆</a>
+                                <ul class="submenu" style="display: none;">
+                                                                            <li><a href="javascript:;">行事曆</a></li>
+                                                                            <li><a href="javascript:;">新增行事曆</a></li>
+                                                                    </ul>
+                            </li>
+                                                    <li class="submenu-toggle">
+                                <a href="javascript:;">差勤系統</a>
+                                <ul class="submenu" style="display: none;">
+                                                                            <li><a href="javascript:;">人員基本資料</a></li>
+                                                                            <li><a href="javascript:;">出境基本資料</a></li>
+                                                                            <li><a href="javascript:;">司機工友資料</a></li>
+                                                                            <li><a href="javascript:;">司機工友出境</a></li>
+                                                                    </ul>
+                            </li>
+                                                    <li class="submenu-toggle">
+                                <a href="javascript:;">薪津</a>
+                                <ul class="submenu" style="display: none;">
+                                                                            <li><a href="javascript:;">通知單查詢</a></li>
+                                                                            <li><a href="javascript:;">新版通知單查詢</a></li>
+                                                                            <li><a href="javascript:;">留言板</a></li>
+                                                                    </ul>
+                            </li>
+                                                    <li class="submenu-toggle">
+                                <a href="javascript:;">資訊業務</a>
+                                <ul class="submenu" style="display: none;">
+                                                                            <li><a href="javascript:;">資訊財產帳</a></li>
+                                                                            <li><a href="javascript:;">人事終身學習</a></li>
+                                                                            <li><a href="javascript:;">資安終身學習</a></li>
+                                                                            <li><a href="javascript:;">ODF時數尚為0之同仁列表</a></li>
+                                                                            <li><a href="javascript:;">113年_公務員勤休製度宣導時數尚為0之同仁列表</a></li>
+                                                                            <li><a href="javascript:;">現行財管</a></li>
+                                                                    </ul>
+                            </li>
+                                                    <li class="submenu-toggle">
+                                <a href="javascript:;">資訊廣場</a>
+                                <ul class="submenu" style="display: none;">
+                                                                            <li><a href="javascript:;">值班作業</a></li>
+                                                                    </ul>
+                            </li>
+                                                    <li class="submenu-toggle">
+                                <a href="javascript:;">個人資訊</a>
+                                <ul class="submenu" style="display: none;">
+                                                                            <li><a href="javascript:;">個人財產帳</a></li>
+                                                                            <li><a href="javascript:;">個人維護</a></li>
+                                                                            <li><a href="javascript:;">出國申請資料</a></li>
+                                                                            <li><a href="javascript:;">出國申請資料V2</a></li>
+                                                                            <li><a href="javascript:;">返臺通報管理</a></li>
+                                                                    </ul>
+                            </li>
+                                                    <li class="submenu-toggle">
+                                <a href="javascript:;">管理者工具</a>
+                                <ul class="submenu" style="display: none;">
+                                                                            <li><a href="javascript:;">管理單位</a></li>
+                                                                            <li><a href="javascript:;">管理使用者</a></li>
+                                                                            <li><a href="javascript:;">權限管理</a></li>
+                                                                            <li><a href="javascript:;">線上報名管理</a></li>
+                                                                            <li><a href="javascript:;">人事異動管理</a></li>
+                                                                            <li><a href="javascript:;">學習地圖管理</a></li>
+                                                                            <li><a href="javascript:;">職稱管理</a></li>
+                                                                    </ul>
+                            </li>
+                                            </ul>
+                            </aside>
+            <section class="content-area">
+                <div class="container">
+                    <h1 class="page-title">網路行事曆</h1>
+                </div>
+                                    <div class="container-fluid">
+                        <div class="form">
+                            <div class="row g-2 align-items-center mb-3">
+                                <div class="col-md-3 col-6">
+                                    <input type="date" class="form-control" placeholder="請選擇起始日期">
+                                </div>
+                                <div class="col-md-3 col-6">
+                                    <input type="date" class="form-control" placeholder="請選擇結束日期">
+                                </div>
+                                <div class="col-md-3 col">
+                                    <input type="text" class="form-control" placeholder="請輸入搜尋字串">
+                                </div>
+                                <div class="col-auto">
+                                    <button class="btn btn-primary">搜尋</button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-12 col-lg-4">
+                                <div class="calendar"></div>
+
+                            </div>
+                            <div class="col-12 col-lg-8">
+                                <div class="mb-3">
+                                    <span class="badge text-bg-dark">已完成「待辦事項」／以黑色顯示</span>
+                                    <span class="badge text-bg-danger">未完成「待辦事項」／會以紅色顯示！</span>
+                                    <span class="badge text-bg-dark">「私人約會」以黑色顯示</span>
+                                    <span class="badge text-bg-info">直接點選日期可連結至該日。</span>
+                                </div>
+                                <div>
+                                    <div class="d-flex gap-2 mb-3">
+                                        <button type="button" class="btn btn-danger btn-sm">刪除</button>
+                                        <button type="button" class="btn btn-success btn-sm" data-bs-toggle="modal" data-bs-target="#staticBackdrop">新工作</button>
+                                    </div>
+                                </div>
+                                                                                                <div class="rwdTable table-responsive">
+                                    <table class="table table-hover">
+                                        <thead>
+                                            <tr class="table-light">
+                                                                                                    <th nowrap=""
+                                                        class="text-center">
+                                                        勾選                                                    </th>
+                                                                                                    <th nowrap=""
+                                                        class="">
+                                                        類別                                                    </th>
+                                                                                                    <th nowrap=""
+                                                        class="">
+                                                        日期                                                    </th>
+                                                                                                    <th nowrap=""
+                                                        class="">
+                                                        時間                                                    </th>
+                                                                                                    <th nowrap=""
+                                                        class="">
+                                                        工作                                                    </th>
+                                                                                                    <th nowrap=""
+                                                        class="">
+                                                        登錄人                                                    </th>
+                                                                                                    <th nowrap=""
+                                                        class="">
+                                                        地點                                                    </th>
+                                                                                                    <th nowrap=""
+                                                        class="">
+                                                        完成                                                    </th>
+                                                                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                                                                            <tr>
+                                                    <td nowrap="" title="勾選" class="text-center">
+                                                        <input class="form-check-input"
+                                                            type="checkbox"
+                                                            value="">
+                                                    </td>
+                                                    <td nowrap="" title="類別" style="--m-td-w:100%">
+                                                        會議                                                    </td>
+                                                    <td nowrap="" title="日期" style="--m-td-w:100%">
+                                                        2025-11-03                                                    </td>
+                                                    <td nowrap="" title="時間" style="--m-td-w:100%">
+                                                        13:15                                                    </td>
+                                                    <td nowrap="" title="工作" style="--m-td-w:100%">
+                                                        月例會議                                                    </td>
+                                                    <td nowrap="" title="登錄人" style="--m-td-w:100%">
+                                                        王小明                                                    </td>
+                                                    <td nowrap="" title="地點" style="--m-td-w:100%">
+                                                        會議室A                                                    </td>
+                                                    <td title="完成" nowrap="" class="noTitle " style="--m-td-w:100%">
+                                                        <span class="text-success">
+                                                            Yes                                                        </span>
+                                                    </td>
+                                                </tr>
+                                                                                            <tr>
+                                                    <td nowrap="" title="勾選" class="text-center">
+                                                        <input class="form-check-input"
+                                                            type="checkbox"
+                                                            value="">
+                                                    </td>
+                                                    <td nowrap="" title="類別" style="--m-td-w:100%">
+                                                        訓練                                                    </td>
+                                                    <td nowrap="" title="日期" style="--m-td-w:100%">
+                                                        2025-11-05                                                    </td>
+                                                    <td nowrap="" title="時間" style="--m-td-w:100%">
+                                                        09:00                                                    </td>
+                                                    <td nowrap="" title="工作" style="--m-td-w:100%">
+                                                        新進人員教育訓練                                                    </td>
+                                                    <td nowrap="" title="登錄人" style="--m-td-w:100%">
+                                                        李小美                                                    </td>
+                                                    <td nowrap="" title="地點" style="--m-td-w:100%">
+                                                        訓練教室                                                    </td>
+                                                    <td title="完成" nowrap="" class="noTitle " style="--m-td-w:100%">
+                                                        <span class="text-danger">
+                                                            No                                                        </span>
+                                                    </td>
+                                                </tr>
+                                                                                            <tr>
+                                                    <td nowrap="" title="勾選" class="text-center">
+                                                        <input class="form-check-input"
+                                                            type="checkbox"
+                                                            value="">
+                                                    </td>
+                                                    <td nowrap="" title="類別" style="--m-td-w:100%">
+                                                        檢查                                                    </td>
+                                                    <td nowrap="" title="日期" style="--m-td-w:100%">
+                                                        2025-11-07                                                    </td>
+                                                    <td nowrap="" title="時間" style="--m-td-w:100%">
+                                                        14:30                                                    </td>
+                                                    <td nowrap="" title="工作" style="--m-td-w:100%">
+                                                        設備安全檢查                                                    </td>
+                                                    <td nowrap="" title="登錄人" style="--m-td-w:100%">
+                                                        張三                                                    </td>
+                                                    <td nowrap="" title="地點" style="--m-td-w:100%">
+                                                        各樓層                                                    </td>
+                                                    <td title="完成" nowrap="" class="noTitle " style="--m-td-w:100%">
+                                                        <span class="text-danger">
+                                                            No                                                        </span>
+                                                    </td>
+                                                </tr>
+                                                                                            <tr>
+                                                    <td nowrap="" title="勾選" class="text-center">
+                                                        <input class="form-check-input"
+                                                            type="checkbox"
+                                                            value="">
+                                                    </td>
+                                                    <td nowrap="" title="類別" style="--m-td-w:100%">
+                                                        會議                                                    </td>
+                                                    <td nowrap="" title="日期" style="--m-td-w:100%">
+                                                        2025-11-10                                                    </td>
+                                                    <td nowrap="" title="時間" style="--m-td-w:100%">
+                                                        10:00                                                    </td>
+                                                    <td nowrap="" title="工作" style="--m-td-w:100%">
+                                                        季度檢討會議                                                    </td>
+                                                    <td nowrap="" title="登錄人" style="--m-td-w:100%">
+                                                        陳經理                                                    </td>
+                                                    <td nowrap="" title="地點" style="--m-td-w:100%">
+                                                        大會議室                                                    </td>
+                                                    <td title="完成" nowrap="" class="noTitle " style="--m-td-w:100%">
+                                                        <span class="text-danger">
+                                                            No                                                        </span>
+                                                    </td>
+                                                </tr>
+                                                                                    </tbody>
+                                    </table>
+                                </div>
+                                <!-- Modal -->
+                                <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+                                    <div class="modal-dialog modal-lg">
+                                        <div class="modal-content">
+                                            <div class="modal-header">
+                                                <h1 class="modal-title fs-5" id="staticBackdropLabel">新增／修改／觀看行事曆</h1>
+                                                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                            </div>
+                                            <div class="modal-body">
+                                                <form>
+                                                    <!-- 日期與時間 -->
+                                                    <div class="mb-3">
+                                                        <label class="form-label">日期：</label>
+                                                        <div class="row g-2 align-items-center">
+                                                            <!-- 日期選擇 -->
+                                                            <div class="col-12 col-sm-6 col-md-4">
+                                                                <input type="date" class="form-control" value="2025-10-03">
+                                                            </div>
+                                                            <!-- 小時 -->
+                                                            <div class="col-6 col-sm-3 col-md-2">
+                                                                <select class="form-select" aria-label="小時">
+                                                                    <option value="08">08</option>
+                                                                    <option value="09">09</option>
+                                                                    <option value="10">10</option>
+                                                                    <option value="11">11</option>
+                                                                </select>
+                                                            </div>
+                                                            <!-- 分鐘 -->
+                                                            <div class="col-6 col-sm-3 col-md-2">
+                                                                <select class="form-select" aria-label="分鐘">
+                                                                    <option value="00">00</option>
+                                                                    <option value="15">15</option>
+                                                                    <option value="30">30</option>
+                                                                    <option value="45">45</option>
+                                                                </select>
+                                                            </div>
+                                                            <!-- 例行性選項 -->
+                                                            <div class="col-12 col-md-4">
+                                                                <div class="d-flex flex-column flex-sm-row gap-2">
+                                                                    <div class="form-check">
+                                                                        <input class="form-check-input" type="checkbox" id="isWeekly">
+                                                                        <label class="form-check-label" for="isWeekly">
+                                                                            星期例行性
+                                                                        </label>
+                                                                    </div>
+                                                                    <div class="form-check">
+                                                                        <input class="form-check-input" type="checkbox" id="isMonthly">
+                                                                        <label class="form-check-label" for="isMonthly">
+                                                                            月份例行性
+                                                                        </label>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+
+                                                    <!-- 類別 -->
+                                                    <div class="mb-3">
+                                                        <label class="form-label">類別：</label>
+                                                        <div class="d-flex flex-column flex-sm-row gap-2">
+                                                            <div class="form-check">
+                                                                <input class="form-check-input" type="radio" name="category" id="personal" checked>
+                                                                <label class="form-check-label" for="personal">
+                                                                    個人行程
+                                                                </label>
+                                                            </div>
+                                                            <div class="form-check">
+                                                                <input class="form-check-input" type="radio" name="category" id="official">
+                                                                <label class="form-check-label" for="official">
+                                                                    本單位行程
+                                                                </label>
+                                                            </div>
+                                                            <div class="form-check">
+                                                                <input class="form-check-input" type="radio" name="category" id="public">
+                                                                <label class="form-check-label text-danger" for="public">
+                                                                    全局行程
+                                                                </label>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+
+                                                    <!-- 參與人員 -->
+                                                    <div class="mb-3">
+                                                        <label class="form-label">參與人員：</label>
+                                                        <div class="row g-2">
+                                                            <div class="col-12 col-sm-8">
+                                                                <select class="form-select">
+                                                                    <option value="">請選擇參與人員</option>
+                                                                    <option value="user1">王小明</option>
+                                                                    <option value="user2">李小美</option>
+                                                                    <option value="user3">張三</option>
+                                                                </select>
+                                                            </div>
+                                                            <div class="col-12 col-sm-4">
+                                                                <div class="d-flex gap-1 flex-wrap">
+                                                                    <button type="button" class="btn btn-outline-secondary btn-sm flex-fill">刪除</button>
+                                                                    <button type="button" class="btn btn-primary btn-sm flex-fill">加入人員</button>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+
+                                                    <!-- 地點 -->
+                                                    <div class="mb-3">
+                                                        <label class="form-label">地點：</label>
+                                                        <div class="input-group">
+                                                            <input type="text" class="form-control" placeholder="請輸入地點">
+                                                            <span class="input-group-text">
+                                                                <i class="bi bi-question-circle text-muted"></i>
+                                                            </span>
+                                                        </div>
+                                                    </div>
+
+                                                    <!-- 標題 -->
+                                                    <div class="mb-3">
+                                                        <label class="form-label">標題：</label>
+                                                        <div class="input-group">
+                                                            <input type="text" class="form-control" placeholder="請輸入標題">
+                                                            <span class="input-group-text">
+                                                                <i class="bi bi-question-circle text-muted"></i>
+                                                            </span>
+                                                        </div>
+                                                    </div>
+
+                                                    <!-- 內容 -->
+                                                    <div class="mb-3">
+                                                        <label class="form-label">內容：</label>
+                                                        <textarea class="form-control" rows="4" placeholder="請輸入內容詳述"></textarea>
+                                                    </div>
+                                                </form>
+                                            </div>
+                                            <div class="modal-footer">
+                                                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">確定送出</button>
+                                                <button type="button" class="btn btn-primary" data-bs-dismiss="modal">關閉</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+
+                    </div>
+                    </div>
+
+    </section>
+    <div id="mask"></div>
+    </main>
+
+    </div>
+
+    <script src="assets/js/bootstrap.bundle.js"></script>
+            <script src="assets/js/jquery.min.js"></script>
+        <script src="assets/js/calendar.js"></script>
+        <script src="assets/js/script.js"></script>
 </body>
 
 </html>
