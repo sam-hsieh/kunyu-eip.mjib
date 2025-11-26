@@ -7,3 +7,4 @@
 人員管理：org-user-manage.html  
 人員管理-資料異動：org-user-edit.html  
 網路行事曆：calendar.html  
+請從單一窗口登入使用：redirect.html
